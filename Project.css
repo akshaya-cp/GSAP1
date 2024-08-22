@@ -108,6 +108,12 @@ header .menu img {
 }
 
 .inner-container-4:hover {
+  background-image: url(5.jpg);
+  cursor: pointer;
+
+}
+
+.inner-container-5:hover {
   background-image: url(4.jpg);
   cursor: pointer;
 
