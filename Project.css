@@ -1,12 +1,16 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
+
 body {
   background-color: #f0eed7;
   color: #161616;
-  overflow: hidden;
+  overflow: hidden; /* Hide vertical scroll */
+  font-family: Arial, sans-serif; /* Ensure consistent font rendering */
 }
+
 header {
   position: absolute;
   display: flex;
@@ -16,80 +20,95 @@ header {
   height: 80px;
   width: 100%;
 }
+
 header .img img {
   width: 60px;
   padding: 0px 20px;
   filter: invert(0.9);
 }
+
 header .heading {
   font-family: "Neutral Face";
 }
+
 header .menu img {
   width: 35px;
   padding: 0px 50px;
 }
-.container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+
+.scroll-container {
+  overflow-x: auto; /* Enable horizontal scroll */
+  overflow-y: hidden; /* Prevent vertical scroll */
+  white-space: nowrap; /* Ensure that children are aligned horizontally */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for aligning children */
+  align-items: stretch; /* Stretch children to fill the container's height */
+  padding: 20px 0; /* Padding for spacing */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
+
+.container {
+  display: flex;
+  align-items: stretch; /* Ensure containers stretch to full height */
+}
+
 .inner-container {
-  width: 100%;
-  height: 100%;
+  min-width: 300px; /* Minimum width for each container */
+  height: 100%; /* Full height of the scroll container */
+  flex: 0 0 auto; /* Prevent containers from shrinking and growing beyond content size */
+  margin: 0 10px; /* Space between containers */
   display: flex;
   align-items: center;
+  justify-content: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-image: transparent;
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1) ease-in-out;
+  position: relative; /* Ensure absolute positioning within containers works */
 }
-.inner-container .inner-inner-container {
+
+.inner-inner-container {
   width: 100%;
-  height: 80%;
-  margin-top: 20%;
+  height: auto; /* Adjust height based on content */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-direction: column;
-  border-left: 1px solid rgba(39, 39, 39, 0.281);
+  text-align: center; /* Center text horizontally */
+  padding: 20px; /* Add padding inside container */
 }
 
 .top-section h1 {
-  font-size: 3rem;
+  font-size: 3rem; /* Adjust font size for better fit */
   font-family: "Kenoky";
   font-weight: lighter;
   text-transform: uppercase;
+  margin: 0; /* Remove default margins */
 }
+
 .top-section p {
-  padding: 0.5rem 0px;
+  padding: 0.5rem 0;
   font-family: "Neutral Face";
-  font-size: 0.8rem;
+  font-size: 1rem; /* Adjust font size */
   letter-spacing: 1px;
-  padding-left: 2px;
+  margin: 0; /* Remove default margins */
 }
-.inner-container .bottom-section {
-  font-size: 25rem;
-  margin-bottom: 50px;
+
+.bottom-section {
+  font-size: 14rem; /* Adjust font size */
+  margin: 0; /* Remove default margins */
   font-family: "Kenoky";
   font-weight: lighter;
   color: #8f0000;
 }
-.inner-container:hover .top-section h1 {
-  transition: color 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-  color: white;
-}
-.inner-container:hover .top-section p {
-  transition: color 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+.inner-container:hover .top-section h1,
+.inner-container:hover .top-section p,
+.inner-container:hover .bottom-section {
   color: white;
 }
 
-.inner-container:hover .bottom-section {
-  transition: color 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  color: white;
-}
 .inner-container-1:hover {
   background-image: url(1.jpg);
   cursor: pointer;
@@ -98,25 +117,21 @@ header .menu img {
 .inner-container-2:hover {
   background-image: url(2.jpg);
   cursor: pointer;
-
 }
 
 .inner-container-3:hover {
   background-image: url(3.jpg);
   cursor: pointer;
-
 }
 
 .inner-container-4:hover {
   background-image: url(5.jpg);
   cursor: pointer;
-
 }
 
 .inner-container-5:hover {
   background-image: url(4.jpg);
   cursor: pointer;
-
 }
 
 .c-nav-social {
@@ -138,8 +153,7 @@ header .menu img {
   text-decoration: none;
 }
 
-#line4{
-  /* display: block; */
+#line4 {
   margin-left: 2.6vw;
   margin-top: 2.8vw;
   margin-bottom: 0vw;
@@ -151,8 +165,8 @@ header .menu img {
 
 .c-nav-social__dropdown {
   position: absolute;
-  top: -13px;
-  left: -30%;
+  top: 100%;
+  left: 0;
   width: 16vw;
   height: 100px;
   background: #f0eed7;
@@ -177,20 +191,18 @@ header .menu img {
   opacity: 0;
   transform: translateY(10px);
   transition: transform 0.3s ease, opacity 0.3s ease;
-  
 }
 
-/* Dropdown styling */
 .c-nav-social__dropdown ul li:first-child {
   margin-top: 70px; /* Adjust this value as needed */
 }
+
 .c-nav-social__dropdown ul li:last-child {
   margin-bottom: 15px; /* Adjust this value as needed */
 }
 
 .c-nav-social__dropdown ul li a {
-
-  margin-top:0px;
+  margin-top: 0px;
   margin-left: 20px;
   text-decoration: none;
   color: #383838;
@@ -198,7 +210,6 @@ header .menu img {
   position: relative;
 }
 
-/* Show dropdown on hover */
 .c-nav-social:hover .c-nav-social__dropdown {
   visibility: visible;
   opacity: 1;
@@ -215,7 +226,6 @@ header .menu img {
   background-color: #f0f0f0;
 }
 
-/* Dropdown arrow */
 .c-nav-social__dropdown:after {
   content: url('drop-down.0028b9b3.svg');
   position: absolute;

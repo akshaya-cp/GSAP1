@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery Landing Page Website using HTML, CSS and GSAP</title>
-    <link rel="stylesheet" href="Project.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="img">
-        <img src="logo.svg" alt="" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery Landing Page Website using HTML, CSS and GSAP</title>
+  <link rel="stylesheet" href="Project.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="img">
+      <img src="logo.svg" alt="" />
+    </div>
+    <div class="c-nav-social o-desktop">
+      <a href="index.html" class="socials-heading">PROJECT GALLERY
+        <span id="line1" class="line"></span>
+        <span id="line2" class="line"></span>
+      </a>
+      <div class="c-nav-social__dropdown">
+        <ul>
+          <hr id="line4">
+          <li style="--order:1"><a href="index.html">Back</a></li>
+        </ul>
       </div>
-      <div class="c-nav-social o-desktop">
-        <a href="index.html" class="socials-heading">PROJECT GALLERY
-          <span id="line1" class="line"></span>
-          <span id="line2" class="line"></span>
-        </a>
-        <div class="c-nav-social__dropdown">
-          <ul>
-            <hr id="line4">
-            <li style="--order:1"><a href="index.html">Back</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="menu">
-        <img src="menu.svg" alt="" />
-      </div>
-    </header>
+    </div>
+    <div class="menu">
+      <img src="menu.svg" alt="" />
+    </div>
+  </header>
+  <div class="scroll-container">
     <div class="container">
       <div class="inner-container inner-container-1" id="clickable-container">
         <div class="inner-inner-container">
@@ -44,11 +45,6 @@
         </div>
       </div>
       
-      <script>
-        document.getElementById("clickable-container").addEventListener("click", function() {
-          window.location.href = "https://lit-website-2.vercel.app/#contact";
-        });
-      </script>
       <div class="inner-container inner-container-2" id="clickable-container1">
         <div class="inner-inner-container">
           <div class="top-section">
@@ -62,11 +58,7 @@
           <div class="bottom-section">2</div>
         </div>
       </div>
-      <script>
-        document.getElementById("clickable-container1").addEventListener("click", function() {
-          window.location.href = "https://github.com/zeolee01/HAL";
-        });
-      </script>
+      
       <div class="inner-container inner-container-3" id="clickable-container2">
         <div class="inner-inner-container">
           <div class="top-section">
@@ -80,28 +72,21 @@
           <div class="bottom-section">3</div>
         </div>
       </div>
-      <script>
-        document.getElementById("clickable-container2").addEventListener("click", function() {
-          window.location.href = "https://github.com/akshaya-cp/TInyShakespeare-GPT_Model";
-        });
-      </script>
-      <div class="inner-container inner-container-4">
+      
+      <div class="inner-container inner-container-4" id="clickable-container3">
         <div class="inner-inner-container">
           <div class="top-section">
             <h1>
               Mind<br />
-              Memoir
+              Memoir<br />
+              .
             </h1>
             <p>MDCLX</p>
           </div>
           <div class="bottom-section">4</div>
         </div>
       </div>
-      <script>
-        document.getElementById("clickable-container2").addEventListener("click", function() {
-          window.location.href = "https://mind-memoir-12ie-4n2neb3ra-zeolee.vercel.app/";
-        });
-      </script>
+
       <div class="inner-container inner-container-5">
         <div class="inner-inner-container">
           <div class="top-section">
@@ -116,16 +101,29 @@
         </div>
       </div>
     </div>
-    <script>
-      const tl = gsap.timeline();
-      tl.from(".img, .heading, .menu, h1, p, .bottom-section, .inner-container", {
-        duration: 1,
-        y: 200,
-        opacity: 0,
-        stagger: {
-          amount: 0.5,
-        },
-      });
-    </script>
-  </body>
+  </div>
+  <script>
+    document.getElementById("clickable-container").addEventListener("click", function() {
+      window.location.href = "https://lit-website-2.vercel.app/#contact";
+    });
+    document.getElementById("clickable-container1").addEventListener("click", function() {
+      window.location.href = "https://github.com/zeolee01/HAL";
+    });
+    document.getElementById("clickable-container2").addEventListener("click", function() {
+      window.location.href = "https://github.com/akshaya-cp/TInyShakespeare-GPT_Model";
+    });
+    document.getElementById("clickable-container3").addEventListener("click", function() {
+      window.location.href = "https://mind-memoir-12ie-4n2neb3ra-zeolee.vercel.app/";
+    });
+    const tl = gsap.timeline();
+    tl.from(".img, .heading, .menu, h1, p, .bottom-section, .inner-container", {
+      duration: 1,
+      y: 200,
+      opacity: 0,
+      stagger: {
+        amount: 0.5,
+      },
+    });
+  </script>
+</body>
 </html>
